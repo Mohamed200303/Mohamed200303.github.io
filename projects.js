@@ -61,7 +61,7 @@ window.PROJECTS = [
     type: 'Web app',
     role: 'Solo',
     featured: false,
-    summary: 'One AI-powered app for university life: revision, deadlines and money first, then careers and campus. Version 1 is being built over the winter break.',
+    summary: 'One AI-powered app for university life: revision, deadlines and money first, then your uni connected, careers, wellbeing and campus. Version 1 is being built over the winter break.',
     tags: ['Python', 'Flask', 'SQL', 'Claude API'],
     visual: 'modules',
     image: '',
@@ -79,12 +79,14 @@ window.PROJECTS = [
         { heading: 'Version 1: the core', points: [
           'Study: AI turns lecture notes into flashcards and quizzes, and explains any card step by step.',
           'Planner: every deadline and exam in one place, with an AI-made revision timetable.',
-          'Money: a weekly budget, bill splitting with flatmates, rent reminders and an AI weekly summary.'
+          'Money: a weekly budget, bill splitting with flatmates, rent reminders and an AI weekly summary.',
+          'From day one: a Get support page linking to university wellbeing services and urgent helplines.'
         ] },
         { heading: 'The roadmap', points: [
-          'Version 2: chat with your notes, past-paper practice, a degree class predictor, timetable and habits.',
-          'Version 3: CV builder, AI interview practice, internship tracker, and an arrival kit for international students.',
-          'Version 4: study buddies, shared notes, societies and a textbook marketplace.'
+          'Version 2, your uni connected: timetable and Moodle deadlines in one place, a daily AI briefing, and a phone app with reminders. Plus chat with your notes, past-paper practice and a degree class predictor.',
+          'Version 3, careers: CV builder, AI interview practice and an internship tracker.',
+          'Version 4, ready for Welcome Week 2027: an arrival kit for international students, housing and admin help, Arabic and other languages, and a wellbeing hub that connects students to real support.',
+          'Version 5, community: study buddies, shared notes, societies and a textbook marketplace.'
         ] },
         { heading: 'Why I am building it', text: 'I want to build something students actually use every week, and learn full-stack development, databases and applied AI along the way. If it works for students at Nottingham, the plan is to grow it into a startup.' }
       ]
