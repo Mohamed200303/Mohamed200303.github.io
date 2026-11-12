@@ -109,7 +109,7 @@
   window.addEventListener('resize', onScroll);
   onScroll();
 
-  /* ---------- Projects (the list lives in assets/js/projects.js) ---------- */
+  /* ---------- Projects (the list lives in projects.js) ---------- */
   var PROJECTS = (Array.isArray(window.PROJECTS) ? window.PROJECTS : []).filter(function (p) { return p && p.id && p.title; });
   var STAGES = ['Plan', 'Build', 'Launch'];
   var STATUS = {
@@ -575,7 +575,7 @@
     { g: 'Navigate', label: 'About', icon: 'i-user', k: 'bio story nottingham', run: function () { goTo('#about'); } },
     { g: 'Navigate', label: 'Contact', icon: 'i-mail', k: 'email reach hire internship', run: function () { goTo('#contact'); } }
   ].concat(projectCommands, [
-    { g: 'Writing', label: 'What my first year of CS is teaching me', hint: 'essay', icon: 'i-pen', k: 'blog first year cs50 c math', run: function () { location.href = ROOT + 'blog/first-year-of-cs.html'; } },
+    { g: 'Writing', label: 'What my first year of CS is teaching me', hint: 'essay', icon: 'i-pen', k: 'blog first year cs50 c math', run: function () { location.href = ROOT + 'first-year-of-cs.html'; } },
     { g: 'Actions', label: 'Copy email address', icon: 'i-copy', k: 'contact mail clipboard', run: copyEmail },
     { g: 'Actions', label: 'Send an email', icon: 'i-mail', k: 'contact mail write', run: function () { location.href = 'mailto:' + email; } },
     { g: 'Actions', label: 'Open GitHub', icon: 'i-github', k: 'code repos source', run: function () { window.open(GITHUB, '_blank', 'noopener'); } },

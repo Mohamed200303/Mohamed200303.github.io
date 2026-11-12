@@ -29,7 +29,7 @@ window.PROJECTS = [
     summary: 'A portfolio that behaves like its subject: a neural network that trains in front of you.',
     tags: ['JavaScript', 'Canvas', 'CSS', 'GitHub API'],
     visual: 'browser',               // picture on the card: 'browser', 'modules', or leave '' for an automatic one
-    image: '',                       // or a screenshot instead, e.g. 'assets/projects/my-project.png'
+    image: '',                       // or a screenshot instead, e.g. 'my-project.png' (put the image next to this file)
     links: [
       { label: 'View the code', url: 'https://github.com/Mohamed200303/Mohamed200303.github.io' }
     ],
