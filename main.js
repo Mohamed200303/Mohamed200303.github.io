@@ -9,6 +9,10 @@
   var root = d.documentElement;
   var ROOT = root.getAttribute('data-root') || './';
   var GITHUB = 'https://github.com/Mohamed200303';
+  var CV_FILE = 'Mohamed-Salem-CV.pdf';
+  // Visitor stats with GoatCounter (free, no cookies). To switch them on, put your
+  // GoatCounter code between the quotes, e.g. 'mohamedsalem'. Leave it empty to keep stats off.
+  var GOATCOUNTER_CODE = '';
   var isHome = !!d.getElementById('work');
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -63,6 +67,31 @@
     copy(email).then(function () { toast('Email copied'); }, function () { location.href = 'mailto:' + email; });
   }
   $$('[data-copy-email]').forEach(function (b) { b.addEventListener('click', copyEmail); });
+
+  /* ---------- Visitor stats (GoatCounter: free, no cookies, no personal data) ---------- */
+  var isLocal = location.protocol === 'file:' || /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+  if (GOATCOUNTER_CODE && !isLocal) {
+    var gc = d.createElement('script');
+    gc.async = true;
+    gc.src = 'https://gc.zgo.at/count.js';
+    gc.setAttribute('data-goatcounter', 'https://' + GOATCOUNTER_CODE + '.goatcounter.com/count');
+    d.head.appendChild(gc);
+  }
+  function trackEvent(name) {
+    try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: name, title: name, event: true }); } catch (e) { /* stats are optional */ }
+  }
+
+  /* ---------- CV download ---------- */
+  function downloadCV() {
+    trackEvent('cv-download');
+    var a = d.createElement('a');
+    a.href = ROOT + CV_FILE;
+    a.download = CV_FILE;
+    d.body.appendChild(a);
+    a.click();
+    d.body.removeChild(a);
+  }
+  $$('[data-cv-download]').forEach(function (a) { a.addEventListener('click', function () { trackEvent('cv-download'); }); });
 
   /* ---------- Theme ---------- */
   function setTheme(t) {
@@ -577,6 +606,7 @@
   ].concat(projectCommands, [
     { g: 'Writing', label: 'What my first year of CS is teaching me', hint: 'essay', icon: 'i-pen', k: 'blog first year cs50 c math', run: function () { location.href = ROOT + 'first-year-of-cs.html'; } },
     { g: 'Actions', label: 'Copy email address', icon: 'i-copy', k: 'contact mail clipboard', run: copyEmail },
+    { g: 'Actions', label: 'Download my CV', icon: 'i-download', k: 'resume cv pdf download hire', run: downloadCV },
     { g: 'Actions', label: 'Send an email', icon: 'i-mail', k: 'contact mail write', run: function () { location.href = 'mailto:' + email; } },
     { g: 'Actions', label: 'Open GitHub', icon: 'i-github', k: 'code repos source', run: function () { window.open(GITHUB, '_blank', 'noopener'); } },
     { g: 'Actions', label: function () { return root.getAttribute('data-theme') === 'light' ? 'Switch to dark mode' : 'Switch to light mode'; }, icon: 'i-sun', k: 'theme dark light appearance toggle', run: toggleTheme },

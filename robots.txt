@@ -1,0 +1,5 @@
+# Everyone is welcome to read and index this site.
+User-agent: *
+Allow: /
+
+Sitemap: https://mohamed200303.github.io/sitemap.xml

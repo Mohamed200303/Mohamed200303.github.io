@@ -19,6 +19,29 @@ All files sit side by side in one folder (no subfolders), so the whole site can 
 
 ---
 
+## Your CV on the site
+
+The **Download CV** button (in Contact, and "Download my CV" in the ⌘K menu) serves `Mohamed-Salem-CV.pdf` from this folder.
+The CV's source and Word version live in the `cv` folder, which never gets uploaded.
+
+**When your CV changes:** copy the new `cv/Mohamed-Salem-CV.pdf` into this main folder (replace the old one), then upload it to GitHub. Keep the same file name so the button keeps working.
+
+---
+
+## Visitor stats (GoatCounter, free, no cookies)
+
+Stats are built in but switched off until you have an account.
+
+1. Go to **goatcounter.com** and click **Sign up**.
+2. Choose a **code** (for example `mohamedsalem`), which becomes `mohamedsalem.goatcounter.com`, and finish signing up with your email.
+3. Open `main.js`, find `var GOATCOUNTER_CODE = '';` near the top, and put your code between the quotes: `var GOATCOUNTER_CODE = 'mohamedsalem';`
+4. Upload `main.js` to GitHub.
+5. Visit your GoatCounter dashboard to see page views, where visitors came from, and **cv-download** events (each time someone downloads your CV).
+
+GoatCounter uses no cookies and collects no personal data, so the site doesn't need a cookie banner. Visits from your own Mac while testing locally are never counted.
+
+---
+
 ## Add a project (about 10 minutes)
 
 All projects live in one file: **`projects.js`**. You never need to touch the HTML to add one.
@@ -76,12 +99,23 @@ All projects live in one file: **`projects.js`**. You never need to touch the HT
 | `style.css` | Every colour, font and layout rule. Colours are at the top. |
 | `network.js` | The neural network in the hero. |
 | `main.js` | Draws the projects, plus the theme toggle, ⌘K menu, thoughts and GitHub stats. |
-| `og.png` | The preview image shown when the link is shared. |
+| `og.jpg` | The preview image shown when the link is shared (WhatsApp, LinkedIn, iMessage). Keep it under 300 KB or WhatsApp may not show it. |
+| `og.png` | The old, larger preview image. No longer used; safe to delete. |
+| `404.html` | The page people see if they open a link that doesn't exist. GitHub shows it automatically. |
+| `robots.txt` and `sitemap.xml` | Tell Google which pages exist so your name search finds them. |
+| `apple-touch-icon.png` | The icon used when someone saves the site to their iPhone home screen. |
+| `Mohamed-Salem-CV.pdf` | Your CV, served by the Download CV button. |
+| `cv/` | CV source and Word file. Stays on your Mac; never uploaded. |
 | `favicon.svg` | The browser tab icon. |
 
 ## Editing other content
 
 - **Thoughts**: each thought is a `<figure class="card thought">` in `index.html`. Give it a unique `id` (used for share links) and a `data-topic` that matches one of the filter buttons.
-- **New blog post**: copy `first-year-of-cs.html` to a new name, change the text, then add a row to the `Writing` list in `index.html` and a command in the `commands` list in `main.js`.
+- **New blog post**: copy `first-year-of-cs.html` to a new name, change the text, then add a row to the `Writing` list in `index.html`, a command in the `commands` list in `main.js`, and a `<url>` block in `sitemap.xml`.
 - **⌘K menu**: projects are added automatically. Other entries are in the `commands` list in `main.js`.
 - **Accent colour**: change `--grad`, `--accent` and `--accent-2` near the top of `style.css`.
+
+## Moving to your own domain later
+
+When you connect a domain such as `mohamedsalem.dev`, the address `https://mohamed200303.github.io` also needs changing inside these files: `index.html`, `first-year-of-cs.html`, `robots.txt`, `sitemap.xml` and `cv/cv.html`.
+In VS Code, open the portfolio folder and press **⌘⇧H** (Replace in Files): put the old address in the first box and the new one in the second, then click **Replace All**. Ask Claude to remake the CV PDF, then upload the changed files.
